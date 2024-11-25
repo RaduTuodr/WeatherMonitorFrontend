@@ -1,0 +1,29 @@
+{
+    "home": {
+        "title": "Verifique las condiciones meteorológicas",
+        "noCityInput": "¡Seleccione o introduzca una ciudad!",
+        "fetchWeatherError": "¡No se pudieron obtener los datos meteorológicos!"
+    },
+    "cityInput": {
+        "enterCity": "Introducir ciudad",
+        "selectCity": "Seleccionar ciudad"
+    },
+    "navbar": {
+        "title": "Monitoreo del clima",
+        "english": "Inglés",
+        "romanian": "Rumano",
+        "french": "Francés",
+        "spanish": "Español",
+        "german": "Alemán"
+    },
+    "weatherCard": {
+        "temperature": "Temperatura",
+        "humidity": "Humedad",
+        "pressure": "Presión",
+        "description": "Descripción",
+        "timezone": "Zona horaria"
+    },
+    "weatherForm": {
+        "fetchWeather": "Obtener clima"
+    }
+}

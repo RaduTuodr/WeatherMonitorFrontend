@@ -1,4 +1,5 @@
 import React from "react";
+import t from "../utils";
 
 const Navbar = ({ language, setLanguage }) => {
     return (
@@ -6,7 +7,7 @@ const Navbar = ({ language, setLanguage }) => {
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                     <img src="logo.png" alt="icon" className="w-10 h-10 rounded-full" />
-                    <h1 className="text-white text-2xl font-semibold">Weather Monitoring</h1>
+                    <h1 className="text-white text-2xl font-semibold">{t("navbar.title", language)}</h1>
                 </div>
 
                 <div className="relative">
@@ -16,11 +17,11 @@ const Navbar = ({ language, setLanguage }) => {
                         value={language}
                         onChange={(e) => setLanguage(e.target.value)}
                     >
-                        <option value="en">English</option>
-                        <option value="ro">Romanian</option>
-                        <option value="fr">French</option>
-                        <option value="es">Spanish</option>
-                        <option value="de">German</option>
+                        <option value="en">{t("navbar.english", language)}</option>
+                        <option value="ro">{t("navbar.romanian", language)}</option>
+                        <option value="fr">{t("navbar.french", language)}</option>
+                        <option value="es">{t("navbar.spanish", language)}</option>
+                        <option value="de">{t("navbar.german", language)}</option>
                     </select>
                 </div>
             </div>

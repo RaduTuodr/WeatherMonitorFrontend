@@ -1,13 +1,14 @@
 import React from "react";
+import t from "../utils";
 
-const WeatherForm = ({ handleFetchWeather }) => {
+const WeatherForm = ({ handleFetchWeather, language }) => {
     return (
         <div>
             <button
                 className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded"
                 onClick={handleFetchWeather}
             >
-                Fetch Weather
+                {t("weatherForm.fetchWeather", language)}
             </button>
         </div>
     );

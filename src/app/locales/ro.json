@@ -1,0 +1,29 @@
+{
+    "home": {
+        "title": "Verificați condițiile meteo",
+        "noCityInput": "Vă rugăm să selectați sau să introduceți un oraș!",
+        "fetchWeatherError": "Nu s-au putut prelua datele meteorologice!"
+    },
+    "cityInput": {
+        "enterCity": "Introduceți orașul",
+        "selectCity": "Selectați un oraș"
+    },
+    "navbar": {
+        "title": "Monitorizare meteo",
+        "english": "Engleză",
+        "romanian": "Română",
+        "french": "Franceză",
+        "spanish": "Spaniolă",
+        "german": "Germană"
+    },
+    "weatherCard": {
+        "temperature": "Temperatură",
+        "humidity": "Umiditate",
+        "pressure": "Presiune",
+        "description": "Descriere",
+        "timezone": "Fus orar"
+    },
+    "weatherForm": {
+        "fetchWeather": "Obțineți vremea"
+    }
+}

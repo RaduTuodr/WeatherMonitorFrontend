@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import CityInput from "./components/CityInput";
 import WeatherCard from "./components/WeatherCard";
 import WeatherForm from "./components/WeatherForm";
+import t from "./utils";
 
 export default function Home() {
 	const [city, setCity] = useState("");
@@ -12,17 +13,18 @@ export default function Home() {
 	const [weatherData, setWeatherData] = useState(null);
 
 	const handleFetchWeather = async () => {
-		if (!city) return alert("Please select or enter a city!");
+
+		if (!city) return alert(t("home.noCityInput", language));
 
 		try {
 			const response = await fetch(
 				`http://localhost:8080/api/weather/${city}/metric/${language}`
 			);
-			if (!response.ok) throw new Error("Failed to fetch weather data");
+			if (!response.ok) throw new Error(t("home.fetchWeatherError", language));
 			const data = await response.json();
 			setWeatherData(data);
 		} catch (error) {
-			alert("Error fetching weather data: " + error.message);
+			alert(t("home.fetchWeatherError", language));
 		}
 	};
 
@@ -32,13 +34,13 @@ export default function Home() {
 			<Navbar language={language} setLanguage={setLanguage} />
 
 			<div className="flex flex-col items-center mt-10">
-				<h2 className="text-4xl font-bold mb-6">Check Weather Conditions</h2>
+				<h2 className="text-4xl font-bold mb-6">{t("home.title", language)}</h2>
 
-				<CityInput city={city} setCity={setCity} />
+				<CityInput language={language} city={city} setCity={setCity} />
 
-				<WeatherForm handleFetchWeather={handleFetchWeather} />
+				<WeatherForm language={language} handleFetchWeather={handleFetchWeather} />
 
-				{weatherData && <WeatherCard weatherData={weatherData} />}
+				{weatherData && <WeatherCard weatherData={weatherData} language={language} />}
 			</div>
 		</div>
 	);
