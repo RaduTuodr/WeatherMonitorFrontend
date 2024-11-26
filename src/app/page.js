@@ -5,15 +5,18 @@ import Navbar from "./components/Navbar";
 import CityInput from "./components/CityInput";
 import WeatherCard from "./components/WeatherCard";
 import WeatherForm from "./components/WeatherForm";
+import EmailForm from "./components/EmailForm";
 import t from "./utils";
+import AlertForm from "./components/AlertForm";
 
 export default function Home() {
 	const [city, setCity] = useState("");
 	const [language, setLanguage] = useState("en");
 	const [weatherData, setWeatherData] = useState(null);
+	const [email, setEmail] = useState("");
+	const [isSubscribed, setIsSubscribed] = useState(false);
 
 	const handleFetchWeather = async () => {
-
 		if (!city) return alert(t("home.noCityInput", language));
 
 		try {
@@ -30,7 +33,6 @@ export default function Home() {
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-black to-blue-900 text-white">
-
 			<Navbar language={language} setLanguage={setLanguage} />
 
 			<div className="flex flex-col items-center mt-10">
@@ -41,6 +43,16 @@ export default function Home() {
 				<WeatherForm language={language} handleFetchWeather={handleFetchWeather} />
 
 				{weatherData && <WeatherCard weatherData={weatherData} language={language} />}
+
+				{!isSubscribed && (
+					<EmailForm
+						email={email}
+						setEmail={setEmail}
+						onSubmit={() => setIsSubscribed(true)}
+					/>
+				)}
+
+				{isSubscribed && <AlertForm />}
 			</div>
 		</div>
 	);
