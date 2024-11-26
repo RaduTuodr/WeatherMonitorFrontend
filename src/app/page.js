@@ -52,7 +52,7 @@ export default function Home() {
 					/>
 				)}
 
-				{isSubscribed && <AlertForm />}
+				{isSubscribed && <AlertForm email={email} />}
 			</div>
 		</div>
 	);

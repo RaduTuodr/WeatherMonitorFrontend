@@ -1,7 +1,7 @@
 import { Input } from "@nextui-org/input";
 
 const EmailForm = ({ email, setEmail, onSubmit }) => {
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -11,11 +11,23 @@ const EmailForm = ({ email, setEmail, onSubmit }) => {
             return;
         }
 
+        try {
+            const response = await fetch(
+                `http://localhost:8080/api/users/${email}`,
+                {
+                    method: 'POST',
+                }
+            )
+            if (!response.ok) throw new Error('Could not make subscription');
+        } catch (error) {
+            alert('Could not make subscription');
+        }
+
         onSubmit();
     };
 
     return (
-        <div className="max-w-sm mx-auto mt-6 bg-white p-6 rounded-lg shadow-lg">
+        <div className="max-w-sm mx-auto my-12 bg-white p-6 rounded-lg shadow-lg">
             <h5 className="text-2xl font-semibold text-center text-gray-800 mb-4">
                 Stay Updated
             </h5>

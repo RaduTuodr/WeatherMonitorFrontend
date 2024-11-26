@@ -1,17 +1,38 @@
 import React, { useState } from 'react';
 
-const WeatherAlertForm = () => {
+const WeatherAlertForm = ({ email }) => {
+    const [city, setCity] = useState('');
     const [parameter, setParameter] = useState('temperature');
     const [threshold, setThreshold] = useState('');
-    const [condition, setCondition] = useState('above');
+    const [direction, setDirection] = useState('above');
 
-    const handleSubmit = (e) => {
+    const handleSubmitAlert = async () => {
+        console.log(email);
+        try {
+            const message = "Message";
+            const response = await fetch(
+                `http://localhost:8080/api/alerts/${city}/${threshold}/${parameter}/${direction}/${message}/${email}`,
+                {
+                    method: 'POST',
+                }
+            );
+            if (!response.ok) throw new Error("Error at sending alert");
+
+            clearInputs();
+        } catch (error) {
+            alert("Could not send alert!");
+        }
+    };
+
+    const clearInputs = () => {
+        setCity('');
+        setParameter('temperature');
+        setThreshold('');
+    }
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log({
-            parameter,
-            threshold,
-            condition,
-        });
+        await handleSubmitAlert();
     };
 
     return (
@@ -21,6 +42,21 @@ const WeatherAlertForm = () => {
                     Set Up a Weather Alert
                 </h2>
                 <form onSubmit={handleSubmit}>
+
+                    <div className="mb-4">
+                        <label htmlFor="city" className="block text-gray-700 text-sm font-medium">
+                            City
+                        </label>
+                        <input
+                            id="city"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                            placeholder="Enter a city"
+                            className="mt-1 text-gray-700 block w-full p-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                            required
+                        />
+                    </div>
+
                     <div className="mb-4">
                         <label htmlFor="parameter" className="block text-gray-700 text-sm font-medium">
                             Weather Parameter
@@ -70,8 +106,8 @@ const WeatherAlertForm = () => {
                         </label>
                         <select
                             id="condition"
-                            value={condition}
-                            onChange={(e) => setCondition(e.target.value)}
+                            value={direction}
+                            onChange={(e) => setDirection(e.target.value)}
                             className="mt-1 text-gray-700 block w-full p-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         >
                             <option value="above">Above</option>
