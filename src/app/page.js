@@ -1,13 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "react-hot-toast";
+
 import Navbar from "./components/Navbar";
 import CityInput from "./components/CityInput";
 import WeatherCard from "./components/WeatherCard";
 import WeatherForm from "./components/WeatherForm";
 import EmailForm from "./components/EmailForm";
-import t from "./utils";
 import AlertForm from "./components/AlertForm";
+
+import t from "./utils";
 
 export default function Home() {
 	const [city, setCity] = useState("");
@@ -15,21 +18,6 @@ export default function Home() {
 	const [weatherData, setWeatherData] = useState(null);
 	const [email, setEmail] = useState("");
 	const [isSubscribed, setIsSubscribed] = useState(false);
-
-	const handleFetchWeather = async () => {
-		if (!city) return alert(t("home.noCityInput", language));
-
-		try {
-			const response = await fetch(
-				`http://localhost:8080/api/weather/${city}/metric/${language}`
-			);
-			if (!response.ok) throw new Error(t("home.fetchWeatherError", language));
-			const data = await response.json();
-			setWeatherData(data);
-		} catch (error) {
-			alert(t("home.fetchWeatherError", language));
-		}
-	};
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-black to-blue-900 text-white">
@@ -40,7 +28,7 @@ export default function Home() {
 
 				<CityInput language={language} city={city} setCity={setCity} />
 
-				<WeatherForm language={language} handleFetchWeather={handleFetchWeather} />
+				<WeatherForm language={language} city={city} setWeatherData={setWeatherData} />
 
 				{weatherData && <WeatherCard weatherData={weatherData} language={language} />}
 
@@ -48,7 +36,10 @@ export default function Home() {
 					<EmailForm
 						email={email}
 						setEmail={setEmail}
-						onSubmit={() => setIsSubscribed(true)}
+						onSubmit={() => {
+							toast.success("You are now subscribed!");
+							setIsSubscribed(true);
+						}}
 					/>
 				)}
 
