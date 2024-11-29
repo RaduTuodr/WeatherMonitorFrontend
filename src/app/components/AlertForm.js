@@ -2,21 +2,28 @@ import React, { useState } from 'react';
 
 import { toast } from "react-hot-toast";
 
-const WeatherAlertForm = ({ email }) => {
+const WeatherAlertForm = ({ email, token }) => {
 
     const [city, setCity] = useState('');
     const [parameter, setParameter] = useState('temperature');
     const [threshold, setThreshold] = useState('');
     const [direction, setDirection] = useState('above');
 
+    console.log(token);
+
     const handleSubmitAlert = async () => {
 
         const toastId = toast.loading("Creating alert...");
         try {
-            const message = "Message";
             const response = await fetch(
-                `http://localhost:8080/api/alerts/${city}/${threshold}/${parameter}/${direction}/${message}/${email}`,
-                { method: 'POST' }
+                `http://localhost:8080/api/alerts/${city}/${threshold}/${parameter}/${direction}/${email}`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ token })
+                }
             );
             if (!response.ok) throw new Error("Error at sending alert");
             toast.success("Alert created successfully", { id: toastId })
