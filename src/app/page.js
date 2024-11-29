@@ -18,10 +18,10 @@ export default function Home() {
 	const [language, setLanguage] = useState("en");
 	const [weatherData, setWeatherData] = useState(null);
 	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState(""); // Add password state
+	const [password, setPassword] = useState("");
 	const [isSubscribed, setIsSubscribed] = useState(false);
-	const [isAuthenticated, setIsAuthenticated] = useState(false); // Track if the user is authenticated
-	const [token, setToken] = useState(null); // Track if the user is authenticated
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+	const [token, setToken] = useState(null);
 
 	useEffect(() => {
 		const token = localStorage.getItem("token");
@@ -33,13 +33,13 @@ export default function Home() {
 	const handleLogout = () => {
 		localStorage.removeItem("token");
 		setIsAuthenticated(false);
-		toast.success("Logged out successfully!");
+		toast.success(t("home.loggedOutSuccessfully", language));
 	};
 
 	const handleLoginSuccess = () => {
 		localStorage.setItem("token", token);
 		setIsAuthenticated(true);
-		toast.success("Logged in successfully!");
+		toast.success(t("home.loggedInSuccessfully", language));
 	};
 
 	return (
@@ -51,9 +51,10 @@ export default function Home() {
 
 				<CityInput language={language} city={city} setCity={setCity} />
 				<WeatherForm language={language} city={city} setWeatherData={setWeatherData} />
-				{weatherData && <WeatherCard weatherData={weatherData} language={language} />}
+				{weatherData && <WeatherCard language={language} weatherData={weatherData} />}
 
 				{!isAuthenticated && <LoginForm
+					language={language}
 					email={email}
 					setEmail={setEmail}
 					password={password}
@@ -62,9 +63,9 @@ export default function Home() {
 					onLoginSuccess={handleLoginSuccess}
 				/>}
 
-				{isAuthenticated && !isSubscribed && <SubscribeForm onSubmit={() => { setIsSubscribed(true) }} />}
+				{isAuthenticated && !isSubscribed && <SubscribeForm language={language} onSubmit={() => { setIsSubscribed(true) }} />}
 
-				{isAuthenticated && isSubscribed && <AlertForm email={email} token={token} />}
+				{isAuthenticated && isSubscribed && <AlertForm language={language} email={email} token={token} />}
 			</div>
 		</div>
 	);

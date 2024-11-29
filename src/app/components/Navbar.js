@@ -31,7 +31,6 @@ const Navbar = ({ language, setLanguage, handleLogout, isAuthenticated }) => {
                             onClick={handleLogout}
                             className="bg-red-500 hover:bg-red-700 text-white font-bold py-1.5 px-3 rounded"
                         >
-                            {/* <span className="absolute inset-0 bg-red-700 opacity-0 rounded-full transition-opacity duration-300 ease-out hover:opacity-20"></span> */}
                             <span className="relative z-10 text-sm font-semibold">Logout</span>
                         </button>
                     )}

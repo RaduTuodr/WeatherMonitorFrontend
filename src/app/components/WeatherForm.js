@@ -7,22 +7,22 @@ const WeatherForm = ({ language, city, setWeatherData }) => {
 
     const handleFetchWeather = async () => {
         if (!city) {
-            toast.error(t("home.noCityInput", language));
+            toast.error(t("weatherForm.noCityInput", language));
             return;
         }
 
-        const toastId = toast.loading("Fetching weather data...");
+        const toastId = toast.loading(t("weatherForm.obtainingInfo", language));
         try {
             const response = await fetch(
                 `http://localhost:8080/api/weather/${city}/metric/${language}`
             );
-            if (!response.ok) throw new Error(t("home.fetchWeatherError", language));
+            if (!response.ok) throw new Error();
 
             const data = await response.json();
             setWeatherData(data);
-            toast.success("Weather data fetched successfully!", { id: toastId });
+            toast.success(t("weatherForm.weatherObtained", language), { id: toastId });
         } catch (error) {
-            toast.error(t("home.fetchWeatherError", language), { id: toastId });
+            toast.error(t("weatherForm.error", language), { id: toastId });
         }
     };
 

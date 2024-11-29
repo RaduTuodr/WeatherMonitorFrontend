@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import t from '../utils';
 
 import { toast } from "react-hot-toast";
 
-const AlertForm = ({ email, token }) => {
+const AlertForm = ({ email, token, language }) => {
 
     const [city, setCity] = useState('');
     const [parameter, setParameter] = useState('temperature');
@@ -11,7 +12,7 @@ const AlertForm = ({ email, token }) => {
 
     const handleSubmitAlert = async () => {
 
-        const toastId = toast.loading("Creating alert...");
+        const toastId = toast.loading(t("alertForm.creatingAlert", language));
         try {
             const response = await fetch(
                 `http://localhost:8080/api/alerts/${city}/${threshold}/${parameter}/${direction}/${email}`,
@@ -24,14 +25,12 @@ const AlertForm = ({ email, token }) => {
                 }
             );
 
-            if (!response.ok) throw new Error("Error at sending alert");
+            if (!response.ok) throw new Error(t("alertForm.alertError", language));
 
-            console.log(await response.json());
-
-            toast.success("Alert created successfully", { id: toastId })
+            toast.success(t("alertForm.alertSuccess", language), { id: toastId })
             clearInputs();
         } catch (error) {
-            alert("Could not send alert!");
+            alert(t("alertForm.alertError", language));
         }
     };
 
@@ -50,13 +49,13 @@ const AlertForm = ({ email, token }) => {
         <div className="flex justify-center items-center my-12">
             <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-xl">
                 <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
-                    Set Up a Weather Alert
+                    {t("alertForm.title", language)}
                 </h2>
                 <form onSubmit={handleSubmit}>
 
                     <div className="mb-4">
                         <label htmlFor="city" className="block text-gray-700 text-sm font-medium">
-                            City
+                            {t("alertForm.city", language)}
                         </label>
                         <input
                             id="city"
@@ -70,7 +69,7 @@ const AlertForm = ({ email, token }) => {
 
                     <div className="mb-4">
                         <label htmlFor="parameter" className="block text-gray-700 text-sm font-medium">
-                            Weather Parameter
+                            {t("alertForm.weatherParameter", language)}
                         </label>
                         <select
                             id="parameter"
@@ -78,15 +77,15 @@ const AlertForm = ({ email, token }) => {
                             onChange={(e) => setParameter(e.target.value)}
                             className="mt-2 text-gray-700 block w-full p-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         >
-                            <option value="temperature">Temperature</option>
-                            <option value="humidity">Humidity</option>
-                            <option value="pressure">Pressure</option>
+                            <option value="temperature">{t("alertForm.temperature", language)}</option>
+                            <option value="humidity">{t("alertForm.humidity", language)}</option>
+                            <option value="pressure">{t("alertForm.pressure", language)}</option>
                         </select>
                     </div>
 
                     <div className="mb-4">
                         <label htmlFor="threshold" className="block text-gray-700 text-sm font-medium">
-                            Threshold Value
+                            {t("alertForm.thresholdValue", language)}
                         </label>
                         <div className="relative">
                             <input
@@ -113,7 +112,7 @@ const AlertForm = ({ email, token }) => {
 
                     <div className="mb-6">
                         <label htmlFor="condition" className="block text-gray-700 text-sm font-medium">
-                            Condition
+                            {t("alertForm.condition", language)}
                         </label>
                         <select
                             id="condition"
@@ -121,8 +120,8 @@ const AlertForm = ({ email, token }) => {
                             onChange={(e) => setDirection(e.target.value)}
                             className="mt-1 text-gray-700 block w-full p-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         >
-                            <option value="above">Above</option>
-                            <option value="below">Below</option>
+                            <option value="above">{t("alertForm.above", language)}</option>
+                            <option value="below">{t("alertForm.below", language)}</option>
                         </select>
                     </div>
 
@@ -130,7 +129,7 @@ const AlertForm = ({ email, token }) => {
                         type="submit"
                         className="w-full p-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
-                        Set Alert
+                        {t("alertForm.setAlert", language)}
                     </button>
                 </form>
             </div>
