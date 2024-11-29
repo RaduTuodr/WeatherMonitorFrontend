@@ -1,0 +1,71 @@
+{
+    "home": {
+        "title": "Wetterbedingungen prüfen",
+        "loggedOutSuccessfully": "Erfolgreich abgemeldet!",
+        "loggedInSuccessfully": "Erfolgreich eingeloggt!"
+    },
+    "alertForm": {
+        "title": "Wetterwarnung einrichten",
+        "city": "Stadt",
+        "weatherParameter": "Wetterparameter",
+        "thresholdValue": "Schwellenwert",
+        "condition": "Bedingung",
+        "setAlert": "Warnung einrichten",
+        "creatingAlert": "Warnung wird erstellt...",
+        "alertError": "Fehler beim Senden der Warnung",
+        "alertSuccess": "Warnung erfolgreich erstellt",
+        "above": "Über",
+        "below": "Unter",
+        "temperature": "Temperatur",
+        "humidity": "Luftfeuchtigkeit",
+        "pressure": "Luftdruck"
+    },
+    "cityInput": {
+        "enterCity": "Stadt eingeben",
+        "selectCity": "Stadt auswählen"
+    },
+    "loginForm": {
+        "enterValidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "passwordToast": "Das Passwort darf nicht leer sein.",
+        "errorToast": "Es ist ein Fehler aufgetreten",
+        "signUpSuccessfully": "Anmeldung erfolgreich! Sie können sich jetzt einloggen.",
+        "signUpFailed": "Anmeldung fehlgeschlagen",
+        "loginFailed": "Login fehlgeschlagen",
+        "signUp": "Registrieren",
+        "logIn": "Einloggen",
+        "createAccountMsg": "Erstellen Sie ein Konto, um unsere Dienste zu nutzen.",
+        "enterEmailMsg": "Geben Sie Ihre E-Mail und Ihr Passwort ein, um sich einzuloggen.",
+        "switchLogin": "Zu Login wechseln",
+        "switchSignup": "Stattdessen registrieren",
+        "signingUp": "Wird registriert...",
+        "loggingIn": "Wird eingeloggt..."
+    },
+    "navbar": {
+        "title": "Wetterüberwachung",
+        "english": "Englisch",
+        "romanian": "Rumänisch",
+        "french": "Französisch",
+        "spanish": "Spanisch",
+        "german": "Deutsch"
+    },
+    "subscribeForm": {
+        "title": "Bleiben Sie auf dem Laufenden",
+        "subscribeMsg": "Abonnieren Sie, um regelmäßig Warnungen direkt in Ihrem Posteingang zu erhalten.",
+        "subscribe": "Abonnieren",
+        "subscribeSuccessfully": "Sie sind jetzt abonniert"
+    },
+    "weatherCard": {
+        "temperature": "Temperatur",
+        "humidity": "Luftfeuchtigkeit",
+        "pressure": "Luftdruck",
+        "description": "Beschreibung",
+        "timezone": "Zeitzone"
+    },
+    "weatherForm": {
+        "noCityInput": "Keine Stadt hinzugefügt",
+        "fetchWeather": "Wetter abrufen",
+        "obtainingInfo": "Wetterinformationen werden abgerufen...",
+        "error": "Fehler beim Abrufen des Wetters",
+        "weatherObtained": "Wetter erhalten!"
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "home": {
+        "title": "Vérifier les conditions météorologiques",
+        "loggedOutSuccessfully": "Déconnexion réussie !",
+        "loggedInSuccessfully": "Connexion réussie !"
+    },
+    "alertForm": {
+        "title": "Configurer une alerte météorologique",
+        "city": "Ville",
+        "weatherParameter": "Paramètre météorologique",
+        "thresholdValue": "Valeur seuil",
+        "condition": "Condition",
+        "setAlert": "Configurer l'alerte",
+        "creatingAlert": "Création de l'alerte...",
+        "alertError": "Erreur lors de l'envoi de l'alerte",
+        "alertSuccess": "Alerte créée avec succès",
+        "above": "Au-dessus",
+        "below": "En-dessous",
+        "temperature": "Température",
+        "humidity": "Humidité",
+        "pressure": "Pression"
+    },
+    "cityInput": {
+        "enterCity": "Entrer une ville",
+        "selectCity": "Sélectionner une ville"
+    },
+    "loginForm": {
+        "enterValidEmail": "Veuillez entrer une adresse e-mail valide.",
+        "passwordToast": "Le mot de passe ne peut pas être vide.",
+        "errorToast": "Une erreur est survenue",
+        "signUpSuccessfully": "Inscription réussie ! Vous pouvez maintenant vous connecter.",
+        "signUpFailed": "Échec de l'inscription",
+        "loginFailed": "Échec de la connexion",
+        "signUp": "S'inscrire",
+        "logIn": "Se connecter",
+        "createAccountMsg": "Créez un compte pour commencer à utiliser nos services.",
+        "enterEmailMsg": "Entrez votre e-mail et mot de passe pour vous connecter.",
+        "switchLogin": "Passer à la connexion",
+        "switchSignup": "S'inscrire au lieu de cela",
+        "signingUp": "Inscription en cours...",
+        "loggingIn": "Connexion en cours..."
+    },
+    "navbar": {
+        "title": "Suivi Météorologique",
+        "english": "Anglais",
+        "romanian": "Roumain",
+        "french": "Français",
+        "spanish": "Espagnol",
+        "german": "Allemand"
+    },
+    "subscribeForm": {
+        "title": "Restez informé",
+        "subscribeMsg": "Abonnez-vous pour recevoir des alertes régulières directement dans votre boîte de réception.",
+        "subscribe": "S'abonner",
+        "subscribeSuccessfully": "Vous êtes maintenant abonné"
+    },
+    "weatherCard": {
+        "temperature": "Température",
+        "humidity": "Humidité",
+        "pressure": "Pression",
+        "description": "Description",
+        "timezone": "Fuseau horaire"
+    },
+    "weatherForm": {
+        "noCityInput": "Aucune ville ajoutée",
+        "fetchWeather": "Obtenir la météo",
+        "obtainingInfo": "Obtention des informations météo...",
+        "error": "Erreur lors de l'obtention de la météo",
+        "weatherObtained": "Météo obtenue!"
+    }
+}

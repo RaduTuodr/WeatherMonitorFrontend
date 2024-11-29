@@ -1,0 +1,71 @@
+{
+    "home": {
+        "title": "Check Weather Conditions",
+        "loggedOutSuccessfully": "Logged out successfully!",
+        "loggedInSuccessfully": "Logged in successfully!"
+    },
+    "alertForm": {
+        "title": "Set Up a Weather Alert",
+        "city": "City",
+        "weatherParameter": "Weather Parameter",
+        "thresholdValue": "Threshold Value",
+        "condition": "Condition",
+        "setAlert": "Set Alert",
+        "creatingAlert": "Creating alert...",
+        "alertError": "Error at sending alert",
+        "alertSuccess": "Alert created successfully",
+        "above": "Above",
+        "below": "Below",
+        "temperature": "Temperature",
+        "humidity": "Humidity",
+        "pressure": "Pressure"
+    },
+    "cityInput": {
+        "enterCity": "Enter city",
+        "selectCity": "Select city"
+    },
+    "loginForm": {
+        "enterValidEmail": "Please enter a valid email address.",
+        "passwordToast": "Password cannot be empty.",
+        "errorToast": "An error occurred",
+        "signUpSuccessfully": "Sign-up successful! You can now log in.",
+        "signUpFailed": "Sign-up failed",
+        "loginFailed": "Login failed",
+        "signUp": "Sign Up",
+        "logIn": "Login",
+        "createAccountMsg": "Create an account to start using our services.",
+        "enterEmailMsg": "Enter your email and password to log in.",
+        "switchLogin": "Switch to Login",
+        "switchSignup": "Sign Up Instead",
+        "signingUp": "Signing up...",
+        "loggingIn": "Logging in..."
+    },
+    "navbar": {
+        "title": "Weather Monitoring",
+        "english": "English",
+        "romanian": "Romanian",
+        "french": "French",
+        "spanish": "Spanish",
+        "german": "German"
+    },
+    "subscribeForm": {
+        "title": "Stay Updated",
+        "subscribeMsg": "Subscribe to receive regular alerts directly in your inbox.",
+        "subscribe": "Subscribe",
+        "subscribeSuccessfully": "You're now subscribed"
+    },
+    "weatherCard": {
+        "temperature": "Temperature",
+        "humidity": "Humidity",
+        "pressure": "Pressure",
+        "description": "Description",
+        "timezone": "Timezone"
+    },
+    "weatherForm": {
+        "noCityInput": "No city added",
+        "fetchWeather": "Fetch Weather",
+        "obtainingInfo": "Obtaining weather...",
+        "error": "Error obtaining weather",
+        "weatherObtained": "Weather obtained!"
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "home": {
+        "title": "Verifică condițiile meteo",
+        "loggedOutSuccessfully": "Deconectare reușită!",
+        "loggedInSuccessfully": "Conectare reușită!"
+    },
+    "alertForm": {
+        "title": "Setează o alertă meteo",
+        "city": "Oraș",
+        "weatherParameter": "Parametru meteo",
+        "thresholdValue": "Valoare prag",
+        "condition": "Condiție",
+        "setAlert": "Setează alerta",
+        "creatingAlert": "Crearea alertei...",
+        "alertError": "Eroare la trimiterea alertei",
+        "alertSuccess": "Alertă creată cu succes",
+        "above": "Peste",
+        "below": "Sub",
+        "temperature": "Temperatură",
+        "humidity": "Umiditate",
+        "pressure": "Presiune"
+    },
+    "cityInput": {
+        "enterCity": "Introduceți orașul",
+        "selectCity": "Selectați orașul"
+    },
+    "loginForm": {
+        "enterValidEmail": "Vă rugăm să introduceți o adresă de email validă.",
+        "passwordToast": "Parola nu poate fi goală.",
+        "errorToast": "A apărut o eroare",
+        "signUpSuccessfully": "Înregistrare reușită! Puteți acum să vă conectați.",
+        "signUpFailed": "Înregistrare eșuată",
+        "loginFailed": "Conectare eșuată",
+        "signUp": "Înregistrează-te",
+        "logIn": "Conectează-te",
+        "createAccountMsg": "Creează un cont pentru a începe să folosești serviciile noastre.",
+        "enterEmailMsg": "Introduceți email-ul și parola pentru a vă conecta.",
+        "switchLogin": "Treceți la conectare",
+        "switchSignup": "Înregistrați-vă în schimb",
+        "signingUp": "Se înregistrează...",
+        "loggingIn": "Se conectează..."
+    },
+    "navbar": {
+        "title": "Monitorizare Vreme",
+        "english": "Engleză",
+        "romanian": "Română",
+        "french": "Franceză",
+        "spanish": "Spaniolă",
+        "german": "Germană"
+    },
+    "subscribeForm": {
+        "title": "Rămâi la curent",
+        "subscribeMsg": "Abonează-te pentru a primi alerte regulate direct în inbox-ul tău.",
+        "subscribe": "Abonează-te",
+        "subscribeSuccessfully": "Acum ești abonat"
+    },
+    "weatherCard": {
+        "temperature": "Temperatură",
+        "humidity": "Umiditate",
+        "pressure": "Presiune",
+        "description": "Descriere",
+        "timezone": "Fus orar"
+    },
+    "weatherForm": {
+        "noCityInput": "Nu a fost adăugat niciun oraș",
+        "fetchWeather": "Obține vremea",
+        "obtainingInfo": "Obținerea informațiilor meteo...",
+        "error": "Eroare la obținerea vremii",
+        "weatherObtained": "Vreme obținută!"
+    }
+}
