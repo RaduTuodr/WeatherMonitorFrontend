@@ -48,6 +48,7 @@ const LoginForm = ({ email, setEmail, password, setPassword, setToken, onLoginSu
             } else {
                 if (token) {
                     setToken(token);
+                    setEmail(email);
                     onLoginSuccess(token);
                 } else {
                     throw new Error('No token received');

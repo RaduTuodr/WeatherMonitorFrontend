@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 
 import { toast } from "react-hot-toast";
 
-const WeatherAlertForm = ({ email, token }) => {
+const AlertForm = ({ email, token }) => {
 
     const [city, setCity] = useState('');
     const [parameter, setParameter] = useState('temperature');
     const [threshold, setThreshold] = useState('');
     const [direction, setDirection] = useState('above');
-
-    console.log(token);
 
     const handleSubmitAlert = async () => {
 
@@ -25,7 +23,11 @@ const WeatherAlertForm = ({ email, token }) => {
                     body: JSON.stringify({ token })
                 }
             );
+
             if (!response.ok) throw new Error("Error at sending alert");
+
+            console.log(await response.json());
+
             toast.success("Alert created successfully", { id: toastId })
             clearInputs();
         } catch (error) {
@@ -136,4 +138,4 @@ const WeatherAlertForm = ({ email, token }) => {
     );
 };
 
-export default WeatherAlertForm;
+export default AlertForm;

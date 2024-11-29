@@ -64,7 +64,7 @@ export default function Home() {
 
 				{isAuthenticated && !isSubscribed && <SubscribeForm onSubmit={() => { setIsSubscribed(true) }} />}
 
-				{isAuthenticated && isSubscribed && <AlertForm email={email} setToken={setToken} />}
+				{isAuthenticated && isSubscribed && <AlertForm email={email} token={token} />}
 			</div>
 		</div>
 	);
