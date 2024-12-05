@@ -1,5 +1,5 @@
 import { toast } from "react-hot-toast";
-import t from "../utils";
+import { t } from "../utils";
 
 const SubscribeForm = ({ onSubmit, language }) => {
 

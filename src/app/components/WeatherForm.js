@@ -1,7 +1,7 @@
 import React from "react";
-import t from "../utils";
-
 import { toast } from "react-hot-toast";
+
+import { t, baseUrl } from "../utils";
 
 const WeatherForm = ({ language, city, setWeatherData }) => {
 
@@ -14,7 +14,7 @@ const WeatherForm = ({ language, city, setWeatherData }) => {
         const toastId = toast.loading(t("weatherForm.obtainingInfo", language));
         try {
             const response = await fetch(
-                `http://localhost:8080/api/weather/${city}/metric/${language}`
+                `${baseUrl}/api/weather/${city}/metric/${language}`
             );
             if (!response.ok) throw new Error();
 

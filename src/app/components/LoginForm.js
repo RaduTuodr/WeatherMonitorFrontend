@@ -1,7 +1,8 @@
 import { Input } from "@nextui-org/input";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import t from "../utils";
+
+import { t, baseUrl } from "../utils";
 
 const LoginForm = ({ language, email, setEmail, password, setPassword, setToken, onLoginSuccess }) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -25,8 +26,8 @@ const LoginForm = ({ language, email, setEmail, password, setPassword, setToken,
 
         try {
             const endpoint = isSignUp
-                ? `http://localhost:8080/api/auth/signup/${email}`
-                : `http://localhost:8080/api/auth/login/${email}`;
+                ? `${baseUrl}/api/auth/signup/${email}`
+                : `${baseUrl}/api/auth/login/${email}`;
 
             const response = await fetch(endpoint, {
                 method: 'POST',

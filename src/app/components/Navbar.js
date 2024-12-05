@@ -1,5 +1,5 @@
 import React from "react";
-import t from "../utils";
+import { t } from "../utils";
 
 const Navbar = ({ language, setLanguage, handleLogout, isAuthenticated }) => {
     return (

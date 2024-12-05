@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import t from '../utils';
-
 import { toast } from "react-hot-toast";
+
+import { t, baseUrl } from "../utils";
+
 
 const AlertForm = ({ email, token, language }) => {
 
@@ -15,7 +16,7 @@ const AlertForm = ({ email, token, language }) => {
         const toastId = toast.loading(t("alertForm.creatingAlert", language));
         try {
             const response = await fetch(
-                `http://localhost:8080/api/alerts/${city}/${threshold}/${parameter}/${direction}/${email}`,
+                `${baseUrl}/api/alerts/${city}/${threshold}/${parameter}/${direction}/${email}`,
                 {
                     method: 'POST',
                     headers: {

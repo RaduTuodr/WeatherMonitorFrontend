@@ -11,7 +11,7 @@ import LoginForm from "./components/LoginForm";
 import AlertForm from "./components/AlertForm";
 import SubscribeForm from "./components/SubscribeForm";
 
-import t from "./utils";
+import { t } from './utils'
 
 export default function Home() {
 	const [city, setCity] = useState("");
